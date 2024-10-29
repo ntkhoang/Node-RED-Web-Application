@@ -17,3 +17,15 @@ pio run
 To simulate this project, install [Wokwi for VS Code](https://marketplace.visualstudio.com/items?itemName=wokwi.wokwi-vscode). Open the project directory in Visual Studio Code, press **F1** and select "Wokwi: Start Simulator".
 
 Once the simulation is running, open http://localhost:8180 in your web browser to interact with the simulated HTTP server.
+
+## Node-red Web
+
+To use the web site, install Node-red locally you will need a supported version of Node.js
+
+To install Node-RED you can use the npm command that comes with node.js:
+
+```
+sudo npm install -g --unsafe-perm node-red
+```
+
+Then import the flow1.json and flow2.json into Node-red and deploy to use the web site
