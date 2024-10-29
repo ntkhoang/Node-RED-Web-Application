@@ -1,0 +1,2091 @@
+[
+    {
+        "id": "218cb9d462b4c578",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "a3a2810e4c3d3373",
+        "type": "mqtt in",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "sensor/photo/ph",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ee8585a759cf774e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 180,
+        "y": 100,
+        "wires": [
+            [
+                "101725080399a8ee",
+                "71eb012aa8a2b0c8",
+                "209b61e872eb80b4"
+            ]
+        ]
+    },
+    {
+        "id": "0a81c869d10f53fb",
+        "type": "mqtt in",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "sensor/dht22/temp",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ee8585a759cf774e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 260,
+        "wires": [
+            [
+                "7df39a97e4923239",
+                "551644a826c5bd6b",
+                "7787826f836ec02d"
+            ]
+        ]
+    },
+    {
+        "id": "239aeddd390f0e6c",
+        "type": "mqtt in",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "sensor/dht22/hum",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ee8585a759cf774e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 190,
+        "y": 420,
+        "wires": [
+            [
+                "06b23f4439c9a42a",
+                "b5968c74a2bb5cdb",
+                "084c4115623c771d"
+            ]
+        ]
+    },
+    {
+        "id": "101725080399a8ee",
+        "type": "ui-gauge",
+        "z": "218cb9d462b4c578",
+        "name": "pH Value",
+        "group": "c36da55cd4ef40e0",
+        "order": 3,
+        "width": "8",
+        "height": "3",
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "pH",
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ff0000"
+            },
+            {
+                "from": "4",
+                "color": "#00ff00"
+            },
+            {
+                "from": "10",
+                "color": "#ff0000"
+            }
+        ],
+        "min": 0,
+        "max": "14",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 420,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "7df39a97e4923239",
+        "type": "ui-gauge",
+        "z": "218cb9d462b4c578",
+        "name": "Temperature",
+        "group": "c36da55cd4ef40e0",
+        "order": 2,
+        "width": "4",
+        "height": 3,
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "Temperature",
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "20",
+                "color": "#00ff00"
+            },
+            {
+                "from": "40",
+                "color": "#ffff00"
+            },
+            {
+                "from": "70",
+                "color": "#ff0000"
+            }
+        ],
+        "min": "20",
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 430,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "06b23f4439c9a42a",
+        "type": "ui-gauge",
+        "z": "218cb9d462b4c578",
+        "name": "Humidity",
+        "group": "c36da55cd4ef40e0",
+        "order": 1,
+        "width": "4",
+        "height": "3",
+        "gtype": "gauge-half",
+        "gstyle": "rounded",
+        "title": "Humidity",
+        "units": "",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "0",
+                "color": "#ff0000"
+            },
+            {
+                "from": "20",
+                "color": "#ffff00"
+            },
+            {
+                "from": "70",
+                "color": "#00ff00"
+            }
+        ],
+        "min": 0,
+        "max": "100",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": 8,
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 420,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "70c00ef47ec4b680",
+        "type": "mqtt out",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "device/light/timer",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ee8585a759cf774e",
+        "x": 910,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "a61110468514206a",
+        "type": "mqtt out",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "device/led/timer",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ee8585a759cf774e",
+        "x": 920,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "64c6fb7d867da3b9",
+        "type": "mqtt out",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "device/servo/timer",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ee8585a759cf774e",
+        "x": 910,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "54370f5d2fe3e45a",
+        "type": "switch",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 530,
+        "y": 600,
+        "wires": [
+            [
+                "d2f95427f7153eb6"
+            ],
+            [
+                "6b3207a444394811"
+            ]
+        ]
+    },
+    {
+        "id": "d2f95427f7153eb6",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 14",
+        "func": "msg.payload = flow.get(\"ledRingTime\");\n\nlet timeParts = msg.payload.split(\":\");\nlet hours = parseInt(timeParts[0], 10);\nlet minutes = parseInt(timeParts[1], 10);\n\nlet milliseconds = (hours * 3600000) + (minutes * 60000);\n\nmsg.payload = milliseconds;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 560,
+        "wires": [
+            [
+                "70c00ef47ec4b680"
+            ]
+        ]
+    },
+    {
+        "id": "e43832fb8a321b4e",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 15",
+        "func": "flow.set(\"ledRingTime\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 600,
+        "wires": [
+            [
+                "bcde5c1320c3d319"
+            ]
+        ]
+    },
+    {
+        "id": "255894e93dfae4c5",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 16",
+        "func": "flow.set(\"pumpTime\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 740,
+        "wires": [
+            [
+                "3d030b92fc10d1ac"
+            ]
+        ]
+    },
+    {
+        "id": "0568ede58ca8e057",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 17",
+        "func": "flow.set(\"servoTime\", msg.payload)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 880,
+        "wires": [
+            [
+                "8bf5189af06350b0"
+            ]
+        ]
+    },
+    {
+        "id": "be1a1bef17ebb4b5",
+        "type": "switch",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 570,
+        "y": 740,
+        "wires": [
+            [
+                "50824486d5c5be7b"
+            ],
+            [
+                "43affa5a5af875d4"
+            ]
+        ]
+    },
+    {
+        "id": "50824486d5c5be7b",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 18",
+        "func": "msg.payload = flow.get(\"pumpTime\");\n\nlet timeParts = msg.payload.split(\":\");\nlet hours = parseInt(timeParts[0], 10);\nlet minutes = parseInt(timeParts[1], 10);\n\nlet milliseconds = (hours * 3600000) + (minutes * 60000);\n\nmsg.payload = milliseconds;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 700,
+        "wires": [
+            [
+                "a61110468514206a"
+            ]
+        ]
+    },
+    {
+        "id": "220ef1e666220a04",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 19",
+        "func": "msg.payload = flow.get(\"servoTime\");\n\nlet timeParts = msg.payload.split(\":\");\nlet hours = parseInt(timeParts[0], 10);\nlet minutes = parseInt(timeParts[1], 10);\n\nlet milliseconds = (hours * 3600000) + (minutes * 60000);\n\nmsg.payload = milliseconds;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 840,
+        "wires": [
+            [
+                "64c6fb7d867da3b9"
+            ]
+        ]
+    },
+    {
+        "id": "15702ece6b3a6d97",
+        "type": "switch",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 550,
+        "y": 880,
+        "wires": [
+            [
+                "220ef1e666220a04"
+            ],
+            [
+                "a88b30e0978ab75a"
+            ]
+        ]
+    },
+    {
+        "id": "ddd143e7714638bd",
+        "type": "ui-text-input",
+        "z": "218cb9d462b4c578",
+        "group": "7e6ee53ebe976057",
+        "name": "Led Ring",
+        "label": "Light schedule",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "time",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 60,
+        "y": 600,
+        "wires": [
+            [
+                "e43832fb8a321b4e"
+            ]
+        ]
+    },
+    {
+        "id": "bcde5c1320c3d319",
+        "type": "ui-switch",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "label": "",
+        "group": "7e6ee53ebe976057",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 390,
+        "y": 600,
+        "wires": [
+            [
+                "54370f5d2fe3e45a"
+            ]
+        ]
+    },
+    {
+        "id": "94ee01d49574622f",
+        "type": "ui-text-input",
+        "z": "218cb9d462b4c578",
+        "group": "370de736c473a949",
+        "name": "Pump",
+        "label": "Pump schedule",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "time",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 90,
+        "y": 740,
+        "wires": [
+            [
+                "255894e93dfae4c5"
+            ]
+        ]
+    },
+    {
+        "id": "81fcd75e2df1c259",
+        "type": "ui-text-input",
+        "z": "218cb9d462b4c578",
+        "group": "e4c40d6cb7cf3133",
+        "name": "Feeding",
+        "label": "Feeding schedule",
+        "order": 1,
+        "width": "3",
+        "height": "1",
+        "topic": "topic",
+        "topicType": "msg",
+        "mode": "time",
+        "tooltip": "",
+        "delay": 300,
+        "passthru": true,
+        "sendOnDelay": false,
+        "sendOnBlur": true,
+        "sendOnEnter": true,
+        "className": "",
+        "clearable": false,
+        "sendOnClear": false,
+        "icon": "",
+        "iconPosition": "left",
+        "iconInnerPosition": "inside",
+        "x": 80,
+        "y": 880,
+        "wires": [
+            [
+                "0568ede58ca8e057"
+            ]
+        ]
+    },
+    {
+        "id": "3d030b92fc10d1ac",
+        "type": "ui-switch",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "label": "",
+        "group": "370de736c473a949",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 430,
+        "y": 740,
+        "wires": [
+            [
+                "be1a1bef17ebb4b5"
+            ]
+        ]
+    },
+    {
+        "id": "8bf5189af06350b0",
+        "type": "ui-switch",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "label": "",
+        "group": "e4c40d6cb7cf3133",
+        "order": 2,
+        "width": "1",
+        "height": "1",
+        "passthru": false,
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "className": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 410,
+        "y": 880,
+        "wires": [
+            [
+                "15702ece6b3a6d97"
+            ]
+        ]
+    },
+    {
+        "id": "6b3207a444394811",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 20",
+        "func": "flow.set(\"ledRingTime\", 86400000);\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 640,
+        "wires": [
+            [
+                "70c00ef47ec4b680"
+            ]
+        ]
+    },
+    {
+        "id": "43affa5a5af875d4",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 21",
+        "func": "flow.set(\"pumpTime\", 86400000);\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 780,
+        "wires": [
+            [
+                "a61110468514206a"
+            ]
+        ]
+    },
+    {
+        "id": "a88b30e0978ab75a",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 22",
+        "func": "flow.set(\"servoTime\", 86400000);\nreturn msg",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 920,
+        "wires": [
+            [
+                "64c6fb7d867da3b9"
+            ]
+        ]
+    },
+    {
+        "id": "6f3eb2728a3bb5e3",
+        "type": "mqtt out",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "device/light/command",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ee8585a759cf774e",
+        "x": 580,
+        "y": 1100,
+        "wires": []
+    },
+    {
+        "id": "12e7ba371ac7d847",
+        "type": "mqtt out",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "device/led/command",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ee8585a759cf774e",
+        "x": 520,
+        "y": 1280,
+        "wires": []
+    },
+    {
+        "id": "0e42220cac0fcf6f",
+        "type": "mqtt out",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "device/servo/command",
+        "qos": "0",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "ee8585a759cf774e",
+        "x": 590,
+        "y": 1440,
+        "wires": []
+    },
+    {
+        "id": "551644a826c5bd6b",
+        "type": "http request",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.thingspeak.com/update?api_key=WIU7KKHRWL8KD5C9&field1={{payload}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "71eb012aa8a2b0c8",
+        "type": "http request",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.thingspeak.com/update?api_key=WIU7KKHRWL8KD5C9&field3={{payload}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 410,
+        "y": 140,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b5968c74a2bb5cdb",
+        "type": "http request",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://api.thingspeak.com/update?api_key=WIU7KKHRWL8KD5C9&field2={{payload}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 480,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "b04711fb8e6eb3f7",
+        "type": "ui-chart",
+        "z": "218cb9d462b4c578",
+        "group": "ba79372b22c97fb6",
+        "name": "",
+        "label": "pH Level",
+        "order": 1,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "yAxisLabel": "",
+        "yAxisProperty": "",
+        "ymin": "",
+        "ymax": "",
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": false,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "4",
+        "height": 8,
+        "className": "",
+        "x": 1060,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "eb4c588cb618aa07",
+        "type": "ui-chart",
+        "z": "218cb9d462b4c578",
+        "group": "ba79372b22c97fb6",
+        "name": "",
+        "label": "Temperature",
+        "order": 2,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "yAxisLabel": "",
+        "yAxisProperty": "",
+        "ymin": "",
+        "ymax": "",
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": false,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "4",
+        "height": 8,
+        "className": "",
+        "x": 1150,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "082f1aa46ce7a75f",
+        "type": "ui-chart",
+        "z": "218cb9d462b4c578",
+        "group": "ba79372b22c97fb6",
+        "name": "",
+        "label": "Humidity",
+        "order": 3,
+        "chartType": "line",
+        "category": "topic",
+        "categoryType": "msg",
+        "xAxisLabel": "",
+        "xAxisProperty": "",
+        "xAxisPropertyType": "property",
+        "xAxisType": "time",
+        "xAxisFormat": "",
+        "xAxisFormatType": "auto",
+        "yAxisLabel": "",
+        "yAxisProperty": "",
+        "ymin": "",
+        "ymax": "",
+        "action": "append",
+        "stackSeries": false,
+        "pointShape": "circle",
+        "pointRadius": 4,
+        "showLegend": false,
+        "removeOlder": 1,
+        "removeOlderUnit": "3600",
+        "removeOlderPoints": "",
+        "colors": [
+            "#0095ff",
+            "#ff0000",
+            "#ff7f0e",
+            "#2ca02c",
+            "#a347e1",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "textColor": [
+            "#666666"
+        ],
+        "textColorDefault": true,
+        "gridColor": [
+            "#e5e5e5"
+        ],
+        "gridColorDefault": true,
+        "width": "4",
+        "height": 8,
+        "className": "",
+        "x": 1160,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "3f0b12898c8b2937",
+        "type": "ui-button-group",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "group": "70fad70e20b66b6b",
+        "order": 1,
+        "width": "3",
+        "height": 1,
+        "label": "Light control",
+        "rounded": true,
+        "useThemeColors": false,
+        "passthru": false,
+        "options": [
+            {
+                "label": "ON",
+                "icon": "",
+                "value": "ON",
+                "valueType": "str",
+                "color": "#009933"
+            },
+            {
+                "label": "OFF",
+                "icon": "",
+                "value": "OFF",
+                "valueType": "str",
+                "color": "#999999"
+            }
+        ],
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 1100,
+        "wires": [
+            [
+                "6f3eb2728a3bb5e3",
+                "9e05969450de40e7"
+            ]
+        ]
+    },
+    {
+        "id": "1b9264e55efd8bbe",
+        "type": "ui-button-group",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "group": "70fad70e20b66b6b",
+        "order": 3,
+        "width": "3",
+        "height": 1,
+        "label": "Pump control",
+        "rounded": true,
+        "useThemeColors": false,
+        "passthru": false,
+        "options": [
+            {
+                "label": "ON",
+                "icon": "",
+                "value": "ON",
+                "valueType": "str",
+                "color": "#009933"
+            },
+            {
+                "label": "OFF",
+                "icon": "",
+                "value": "OFF",
+                "valueType": "str",
+                "color": "#999999"
+            }
+        ],
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 90,
+        "y": 1280,
+        "wires": [
+            [
+                "12e7ba371ac7d847",
+                "8a236e0c9a0fc683"
+            ]
+        ]
+    },
+    {
+        "id": "cef1e86c65c9e9e8",
+        "type": "ui-button-group",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "group": "70fad70e20b66b6b",
+        "order": 2,
+        "width": "3",
+        "height": "1",
+        "label": "Feeding control",
+        "rounded": true,
+        "useThemeColors": false,
+        "passthru": false,
+        "options": [
+            {
+                "label": "ON",
+                "icon": "",
+                "value": "OPEN",
+                "valueType": "str",
+                "color": "#009933"
+            },
+            {
+                "label": "OFF",
+                "icon": "",
+                "value": "CLOSE",
+                "valueType": "str",
+                "color": "#999999"
+            }
+        ],
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 100,
+        "y": 1440,
+        "wires": [
+            [
+                "0e42220cac0fcf6f",
+                "15339614489cb525"
+            ]
+        ]
+    },
+    {
+        "id": "46498207eee35064",
+        "type": "ui-text",
+        "z": "218cb9d462b4c578",
+        "group": "e9af15ed66d632e8",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Light",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Gill Sans,Geneva,sans-serif",
+        "fontSize": "20",
+        "color": "#717171",
+        "className": "",
+        "x": 610,
+        "y": 1520,
+        "wires": []
+    },
+    {
+        "id": "759c1f816236dd03",
+        "type": "mqtt in",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "device/light/status",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ee8585a759cf774e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 1520,
+        "wires": [
+            [
+                "16ea4a1bcfc14ca0"
+            ]
+        ]
+    },
+    {
+        "id": "16ea4a1bcfc14ca0",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 24",
+        "func": "if (msg.payload == 0) msg.payload = \"OFF\"\nelse msg.payload = \"ON\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1520,
+        "wires": [
+            [
+                "46498207eee35064"
+            ]
+        ]
+    },
+    {
+        "id": "d14c9b7a1de43087",
+        "type": "ui-text",
+        "z": "218cb9d462b4c578",
+        "group": "e9af15ed66d632e8",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Pump",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Gill Sans,Geneva,sans-serif",
+        "fontSize": "20",
+        "color": "#717171",
+        "className": "",
+        "x": 610,
+        "y": 1620,
+        "wires": []
+    },
+    {
+        "id": "30e90609e478d4a9",
+        "type": "mqtt in",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "device/led/status",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ee8585a759cf774e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 1620,
+        "wires": [
+            [
+                "6990a9a951b67641"
+            ]
+        ]
+    },
+    {
+        "id": "6990a9a951b67641",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 25",
+        "func": "if (msg.payload == 0) msg.payload = \"OFF\"\nelse msg.payload = \"ON\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1620,
+        "wires": [
+            [
+                "d14c9b7a1de43087"
+            ]
+        ]
+    },
+    {
+        "id": "6785f4062d2fc3d9",
+        "type": "ui-text",
+        "z": "218cb9d462b4c578",
+        "group": "e9af15ed66d632e8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Feeding",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "style": true,
+        "font": "Gill Sans,Geneva,sans-serif",
+        "fontSize": "20",
+        "color": "#717171",
+        "className": "",
+        "x": 620,
+        "y": 1720,
+        "wires": []
+    },
+    {
+        "id": "33b3f9fbc234dcb7",
+        "type": "mqtt in",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "device/servo/status",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ee8585a759cf774e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 1720,
+        "wires": [
+            [
+                "75024d64cfca72e8"
+            ]
+        ]
+    },
+    {
+        "id": "75024d64cfca72e8",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 26",
+        "func": "if (msg.payload == 0) msg.payload = \"CLOSE\"\nelse msg.payload = \"OPEN\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 1720,
+        "wires": [
+            [
+                "6785f4062d2fc3d9"
+            ]
+        ]
+    },
+    {
+        "id": "7baa2bd0b0285b59",
+        "type": "mqtt in",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "sensor/photo/ph",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ee8585a759cf774e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 1880,
+        "wires": [
+            [
+                "179d08672a21d8d9"
+            ]
+        ]
+    },
+    {
+        "id": "1f894d32aa638810",
+        "type": "mqtt in",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "sensor/dht22/temp",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ee8585a759cf774e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 110,
+        "y": 2000,
+        "wires": [
+            [
+                "86eedc55a7643be2"
+            ]
+        ]
+    },
+    {
+        "id": "1077c9d35e1ad6f8",
+        "type": "mqtt in",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "topic": "sensor/dht22/hum",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "ee8585a759cf774e",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 130,
+        "y": 2120,
+        "wires": [
+            [
+                "86736f13544c129c"
+            ]
+        ]
+    },
+    {
+        "id": "179d08672a21d8d9",
+        "type": "switch",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "9",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "6",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 1880,
+        "wires": [
+            [
+                "f90267361d35ccef"
+            ],
+            [
+                "cd9c3db8656ef448"
+            ]
+        ]
+    },
+    {
+        "id": "f90267361d35ccef",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 27",
+        "func": "msg.payload = \"WARNING: pH value is high\"\nmsg.topic = \"NODE RED\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1840,
+        "wires": [
+            [
+                "cf5cb3f967658427"
+            ]
+        ]
+    },
+    {
+        "id": "cd9c3db8656ef448",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 28",
+        "func": "msg.payload = \"WARNING: pH value is low\"\nmsg.topic = \"NODE RED\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1900,
+        "wires": [
+            [
+                "cf5cb3f967658427"
+            ]
+        ]
+    },
+    {
+        "id": "86eedc55a7643be2",
+        "type": "switch",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "45",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "10",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 2000,
+        "wires": [
+            [
+                "0d683297fc715b19"
+            ],
+            [
+                "2cc73be6fd212895"
+            ]
+        ]
+    },
+    {
+        "id": "0d683297fc715b19",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 29",
+        "func": "msg.payload = \"WARNING: Temperature is high\"\nmsg.topic = \"NODE RED\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 1960,
+        "wires": [
+            [
+                "cf5cb3f967658427"
+            ]
+        ]
+    },
+    {
+        "id": "2cc73be6fd212895",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 30",
+        "func": "msg.payload = \"WARNING: Temperature is low\"\nmsg.topic = \"NODE RED\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 2020,
+        "wires": [
+            [
+                "cf5cb3f967658427"
+            ]
+        ]
+    },
+    {
+        "id": "cf5cb3f967658427",
+        "type": "http request",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://www.pushsafer.com/api?k=lEoX1szmLRvr3HC81DdR&m={{payload}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 970,
+        "y": 2000,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "86736f13544c129c",
+        "type": "switch",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "90",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "60",
+                "vt": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 350,
+        "y": 2120,
+        "wires": [
+            [
+                "d2d21949dd227803"
+            ],
+            [
+                "24bbf7cced4b228f"
+            ]
+        ]
+    },
+    {
+        "id": "d2d21949dd227803",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 31",
+        "func": "msg.payload = \"WARNING: Humidity is high\"\nmsg.topic = \"NODE RED\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 2080,
+        "wires": [
+            [
+                "cf5cb3f967658427"
+            ]
+        ]
+    },
+    {
+        "id": "24bbf7cced4b228f",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 32",
+        "func": "msg.payload = \"WARNING: Humidity is low\"\nmsg.topic = \"NODE RED\"\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 550,
+        "y": 2140,
+        "wires": [
+            [
+                "cf5cb3f967658427"
+            ]
+        ]
+    },
+    {
+        "id": "9e05969450de40e7",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 33",
+        "func": "if (msg.payload == \"ON\") msg.payload = \"LIGHT: ON\"\nelse if (msg.payload == \"OFF\") msg.payload = \"LIGHT: OFF\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1040,
+        "wires": [
+            [
+                "d5d219ca02b0dd07"
+            ]
+        ]
+    },
+    {
+        "id": "d5d219ca02b0dd07",
+        "type": "http request",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://www.pushsafer.com/api?k=lEoX1szmLRvr3HC81DdR&m={{payload}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 530,
+        "y": 1040,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8a236e0c9a0fc683",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 34",
+        "func": "if (msg.payload == \"ON\") msg.payload = \"PUMP: ON\"\nelse if (msg.payload == \"OFF\") msg.payload = \"PUMP: OFF\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 270,
+        "y": 1220,
+        "wires": [
+            [
+                "a11b60201774698a"
+            ]
+        ]
+    },
+    {
+        "id": "a11b60201774698a",
+        "type": "http request",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://www.pushsafer.com/api?k=lEoX1szmLRvr3HC81DdR&m={{payload}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 1220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "15339614489cb525",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 35",
+        "func": "if (msg.payload == \"OPEN\") msg.payload = \"Feeding: OPEN\"\nelse if (msg.payload == \"CLOSE\") msg.payload = \"Feeding: CLOSE\"\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 1380,
+        "wires": [
+            [
+                "60bb4c5d09018217"
+            ]
+        ]
+    },
+    {
+        "id": "60bb4c5d09018217",
+        "type": "http request",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://www.pushsafer.com/api?k=lEoX1szmLRvr3HC81DdR&m={{payload}}",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 510,
+        "y": 1380,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d57d770818b82219",
+        "type": "e-mail",
+        "z": "218cb9d462b4c578",
+        "server": "smtp.gmail.com",
+        "port": "465",
+        "authtype": "BASIC",
+        "saslformat": true,
+        "token": "oauth2Response.access_token",
+        "secure": true,
+        "tls": true,
+        "name": "nguyenkhoang15@gmail.com",
+        "dname": "",
+        "x": 1010,
+        "y": 1900,
+        "wires": []
+    },
+    {
+        "id": "209b61e872eb80b4",
+        "type": "http request",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.thingspeak.com/channels/2623189/fields/3.json?api_key=DDHD2ML38PIGEYHL&results=1",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 570,
+        "y": 100,
+        "wires": [
+            [
+                "fef4c198a4175cba"
+            ]
+        ]
+    },
+    {
+        "id": "fef4c198a4175cba",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 36",
+        "func": "var temperature = msg.payload.feeds[0].field3;\nmsg.payload = parseInt(temperature)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 100,
+        "wires": [
+            [
+                "b04711fb8e6eb3f7"
+            ]
+        ]
+    },
+    {
+        "id": "7787826f836ec02d",
+        "type": "http request",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.thingspeak.com/channels/2623189/fields/1.json?api_key=DDHD2ML38PIGEYHL&results=1",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 590,
+        "y": 260,
+        "wires": [
+            [
+                "c4b8391679cbb86e"
+            ]
+        ]
+    },
+    {
+        "id": "c4b8391679cbb86e",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 37",
+        "func": "var humidity = msg.payload.feeds[0].field1;\nmsg.payload = parseInt(humidity)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 810,
+        "y": 260,
+        "wires": [
+            [
+                "eb4c588cb618aa07"
+            ]
+        ]
+    },
+    {
+        "id": "084c4115623c771d",
+        "type": "http request",
+        "z": "218cb9d462b4c578",
+        "name": "",
+        "method": "GET",
+        "ret": "obj",
+        "paytoqs": "ignore",
+        "url": "https://api.thingspeak.com/channels/2623189/fields/2.json?api_key=DDHD2ML38PIGEYHL&results=1",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 650,
+        "y": 420,
+        "wires": [
+            [
+                "cf437d4f06198d53"
+            ]
+        ]
+    },
+    {
+        "id": "cf437d4f06198d53",
+        "type": "function",
+        "z": "218cb9d462b4c578",
+        "name": "function 38",
+        "func": "var ph = msg.payload.feeds[0].field2;\nmsg.payload = parseInt(ph)\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 870,
+        "y": 420,
+        "wires": [
+            [
+                "082f1aa46ce7a75f"
+            ]
+        ]
+    },
+    {
+        "id": "ee8585a759cf774e",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "c36da55cd4ef40e0",
+        "type": "ui-group",
+        "name": "Value",
+        "page": "14d98996b36fec2e",
+        "width": "9",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "7e6ee53ebe976057",
+        "type": "ui-group",
+        "name": "Light Schedule",
+        "page": "e7d462e56ba13cb0",
+        "width": "4",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "370de736c473a949",
+        "type": "ui-group",
+        "name": "Pump Schedule",
+        "page": "e7d462e56ba13cb0",
+        "width": "4",
+        "height": "1",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "e4c40d6cb7cf3133",
+        "type": "ui-group",
+        "name": "Feeding Schedule",
+        "page": "e7d462e56ba13cb0",
+        "width": "4",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "ba79372b22c97fb6",
+        "type": "ui-group",
+        "name": "History value",
+        "page": "b2d8914a8aa9bf7f",
+        "width": "12",
+        "height": "1",
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "70fad70e20b66b6b",
+        "type": "ui-group",
+        "name": "Control",
+        "page": "14d98996b36fec2e",
+        "width": "3",
+        "height": "1",
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "e9af15ed66d632e8",
+        "type": "ui-group",
+        "name": "Device status",
+        "page": "14d98996b36fec2e",
+        "width": "9",
+        "height": "1",
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "14d98996b36fec2e",
+        "type": "ui-page",
+        "name": "Home",
+        "ui": "7a89cbe0b44d04b5",
+        "path": "/page1",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "36b854253bfecc64",
+        "order": 2,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "e7d462e56ba13cb0",
+        "type": "ui-page",
+        "name": "Setting",
+        "ui": "7a89cbe0b44d04b5",
+        "path": "/setting",
+        "icon": "none",
+        "layout": "grid",
+        "theme": "36b854253bfecc64",
+        "order": 3,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "b2d8914a8aa9bf7f",
+        "type": "ui-page",
+        "name": "History",
+        "ui": "7a89cbe0b44d04b5",
+        "path": "/page5",
+        "icon": "none",
+        "layout": "grid",
+        "theme": "36b854253bfecc64",
+        "order": 5,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "7a89cbe0b44d04b5",
+        "type": "ui-base",
+        "name": "My dashboard",
+        "path": "/dashboard",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "showPageTitle": true,
+        "navigationStyle": "default",
+        "titleBarStyle": "default"
+    },
+    {
+        "id": "36b854253bfecc64",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#f7f7f7",
+            "primary": "#66cdf5",
+            "bgPage": "#eeeeee",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    }
+]
